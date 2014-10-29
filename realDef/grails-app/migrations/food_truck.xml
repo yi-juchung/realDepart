@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet author="yi-ju.chung (generated)" id="1414541241237-1">
+        <createTable tableName="coordinates">
+            <column name="id" type="int8">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="coordinatesPK"/>
+            </column>
+            <column name="version" type="int8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accuracy" type="float8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="altitude" type="float8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="altitude_accuracy" type="float8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="heading" type="float8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="latitude" type="float8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="longitude" type="float8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="speed" type="float8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="yi-ju.chung (generated)" id="1414541241237-2">
+        <createTable tableName="food_truck">
+            <column name="id" type="int8">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="food_truckPK"/>
+            </column>
+            <column name="version" type="int8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="addr" type="varchar(255)"/>
+            <column name="enabled" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="latitude" type="float8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="longitude" type="float8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="object_id" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="schedule" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="yi-ju.chung (generated)" id="1414541241237-3">
+        <createTable tableName="geo_position">
+            <column name="id" type="int8">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="geo_positionPK"/>
+            </column>
+            <column name="version" type="int8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coords_id" type="int8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="timestamp" type="int8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="yi-ju.chung (generated)" id="1414541241237-5">
+        <createIndex indexName="object_id_uniq_1414541241159" tableName="food_truck" unique="true">
+            <column name="object_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="yi-ju.chung (generated)" id="1414541241237-6">
+        <createSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="yi-ju.chung (generated)" id="1414541241237-4">
+        <addForeignKeyConstraint baseColumnNames="coords_id" baseTableName="geo_position" constraintName="FK_e4o281vx6fcgxo9lq5nnk8m60" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="coordinates" referencesUniqueColumn="false"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,43 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+*.iml
+*/web-app/WEB-INF/tld/c.tld
+*/web-app/WEB-INF/tld/fmt.tld
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
+.classpath
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+publish
+target
+.idea
+out
+classes
+.ebextensions
+
+# docs
+**/docs/*
+
+# Grails plugins
+plugins
+plugin.xml
