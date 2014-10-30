@@ -15,7 +15,8 @@ class FoodTruckService {
         FoodTruck res = FoodTruck.findByObjectId(objectId)
 
         if (res) {
-            if (res.enabled != enabled || !res.addr.equals(address) || res.latitude != latitude || res.longitude != longitude || !res.schedule.equals(schedule)) {
+            if (res.enabled != enabled || !res.name.equals(name) || !res.addr.equals(address) || res.latitude != latitude || res.longitude != longitude || !res.schedule.equals(schedule)) {
+                res.name = name
                 res.addr = address
                 res.latitude = latitude
                 res.longitude = longitude

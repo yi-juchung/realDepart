@@ -7,12 +7,12 @@ class FoodTruckUpdateJob {
         cron name: 'FoodTruckUpdateTrigger1stTues', cronExpression: "0 0 14 ? * 3#1"
     }
 
-    def foodTruckUpdateService
+    def foodTruckUpdateServiceTests
 
     def execute() {
         log.info "Starting food tuck update job"
 
-        foodTruckUpdateService.updateFoodTrucks()
+        foodTruckUpdateServiceTests.updateFoodTrucks()
 
         log.info "Food truck update job done"
     }
