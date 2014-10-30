@@ -66,19 +66,21 @@ Go to `http://localhost:8080/`, browser will ask you to provide the locations.
 
 `http://localhost:8080/home/nearByFoodTruck?lat=12.3333&lnt=33.33333&radius=0.5`
 
-#### lat, lnt, and radius are all optional, radius unit is miles
+> lat, lnt, and radius are all optional, radius unit is miles
 
 
 Work
 --------------
 `grails-app/controller`, `grails-app/service`, `grails-app/jobs`, `grails-app/test`, `grails-app/views`, and `grails-app/` are written by me. Also, some tweaks and settings under other directories as well.
 
-## Design
+#### Design
 Storing the data returned from the DataSF API, and only updating them periodically in order to improve the query performance.
 As for the front-end part, a basic view is used to get locations through the browser.
 
-## Testing
+#### Testing
 All methods in service are covered by unit tests.
+
+To run the test `grails test-app`
 
 
 
