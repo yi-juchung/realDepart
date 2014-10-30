@@ -19,18 +19,18 @@ Installation
 
 If you want to use personal user role and database, please skip the "setup local database" below, and modify Datasource.groovy under grails-app/conf.
 
->  Setup local database
+###### Setup local database
 * `CREATE DATABASE "realdef"`
 * `CREATE USER "realdef" superuser`
 * `ALTER ROLE realdef WITH LOGIN`
 
->  Populate the schema
+######  Populate the schema
 Go to realDef/, and run `grails dbm-update`
 
->  Run app
+######  Run app
 Go to realDef/, and run `grails run-app`
 
->  Sync up data
+###### Sync up data
 Sync job will be triggered automatically every week to get latest food truck information from DataSF.
 If this is your first time running this app, you can trigger it manually by
 * Once the app is running, go to `http://localhost:8080/quartz/list`
